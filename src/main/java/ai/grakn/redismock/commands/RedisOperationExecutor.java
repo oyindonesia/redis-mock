@@ -155,6 +155,8 @@ public class RedisOperationExecutor {
                 return new RO_hvals(base, params);
             case "sismember":
                 return new RO_sismember(base, params);
+            case "srem":
+                return new RO_srem(base, params);
             default:
                 throw new UnsupportedOperationException(String.format("Unsupported operation '%s'", name));
         }
