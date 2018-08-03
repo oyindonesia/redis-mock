@@ -64,7 +64,11 @@ public class RedisBase {
         Preconditions.checkNotNull(key);
 
         if (base.containsKey(key)) {
-            deadlines.put(key, ttl + System.currentTimeMillis());
+            if(ttl == -1) {
+                deadlines.put(key, ttl);
+            } else {
+                deadlines.put(key, ttl + System.currentTimeMillis());
+            }
             for (RedisBase base : syncBases) {
                 base.setTTL(key, ttl);
             }
