@@ -19,6 +19,18 @@ Add it as a dependency in Maven as:
 </dependency>
 ```
 
+Or use it to gradle dependency from oyindonesia
+
+```code
+compile 'com.github.oyindonesia:redis-mock:master-SNAPSHOT'
+```
+
+add build.gradle repository 
+
+```code
+maven { url 'https://jitpack.io' }
+```
+
 Create a redis server and bind it to jedis:
 
 ```
